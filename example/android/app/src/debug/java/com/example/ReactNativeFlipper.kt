@@ -1,4 +1,4 @@
-package com.example
+package co.simpu.rnlivechat.example
 
 import android.content.Context
 import com.facebook.flipper.android.AndroidFlipperClient

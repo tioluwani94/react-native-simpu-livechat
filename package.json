@@ -1,17 +1,17 @@
 {
-  "name": "react-native-module-template",
-  "version": "2.5.1",
-  "description": "A starter for the React Native library written in TypeScript, with linked example project and optional native code in Swift and Kotlin.",
-  "homepage": "https://github.com/demchenkoalex/react-native-module-template#readme",
-  "main": "lib/index.js",
+  "name": "react-native-simpu-livechat",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/tioluwani94/react-native-simpu-livechat#readme",
+  "main": "src/index.tsx",
   "types": "lib/index.d.ts",
-  "author": "Alex Demchenko <alexdemchenko@yahoo.com>",
+  "author": "Tioluwani Kolawole <kolawole8tiolu@gmail.com>",
   "license": "MIT",
   "files": [
     "android",
     "ios",
     "lib",
-    "react-native-module-template.podspec",
+    "react-native-simpu-livechat.podspec",
     "!android/build",
     "!.DS_Store",
     "!.gradle",
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/runtime": "^7.16.7",
+    "@gorhom/bottom-sheet": "^4",
     "@react-native-community/eslint-config": "^3.0.1",
     "@types/jest": "^27.4.0",
     "@types/react-native": "^0.66.15",
@@ -46,12 +47,17 @@
     "metro-react-native-babel-preset": "^0.67.0",
     "react": "^17.0.2",
     "react-native": "^0.67.1",
+    "react-native-gesture-handler": "^2.8.0",
+    "react-native-reanimated": "^2.13.0",
     "react-test-renderer": "^17.0.2",
     "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*",
+    "@gorhom/bottom-sheet": "*"
   },
   "jest": {
     "preset": "react-native",

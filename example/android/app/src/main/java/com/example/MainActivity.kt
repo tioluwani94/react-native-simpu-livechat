@@ -1,4 +1,4 @@
-package com.example
+package co.simpu.rnlivechat.example
 
 import com.facebook.react.ReactActivity
 

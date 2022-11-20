@@ -1,8 +1,8 @@
-package com.example
+package co.simpu.rnlivechat.example
 
 import android.app.Application
 import android.content.Context
-import com.alexdemchenko.reactnativemoduletemplate.RNModuleTemplatePackage
+import com.tioluwanikolawole.reactnativesimpulivechat.RNSimpuLiveChatPackage
 import com.facebook.react.*
 import com.facebook.soloader.SoLoader
 import java.lang.reflect.InvocationTargetException
@@ -18,7 +18,7 @@ class MainApplication : Application(), ReactApplication {
             val packages = PackageList(this).packages
             // Packages that cannot be autolinked yet can be added manually here, for example:
             // packages.add(MyReactNativePackage());
-            packages.add(RNModuleTemplatePackage())
+            packages.add(RNSimpuLiveChatPackage())
             return packages
         }
 
@@ -42,7 +42,7 @@ class MainApplication : Application(), ReactApplication {
         private fun initializeFlipper(context: Context, reactInstanceManager: ReactInstanceManager) {
             if (BuildConfig.DEBUG) {
                 try {
-                    val aClass = Class.forName("com.example.ReactNativeFlipper")
+                    val aClass = Class.forName("co.simpu.rnlivechat.example.ReactNativeFlipper")
                     aClass
                             .getMethod("initializeFlipper", Context::class.java, ReactInstanceManager::class.java)
                             .invoke(null, context, reactInstanceManager)
