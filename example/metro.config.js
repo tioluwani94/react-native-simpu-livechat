@@ -16,10 +16,20 @@ module.exports = {
     extraNodeModules: {
       react: path.resolve(__dirname, 'node_modules/react'),
       'react-native': path.resolve(__dirname, 'node_modules/react-native'),
+      'react-native-gesture-handler': path.resolve(
+        __dirname,
+        'node_modules/react-native-gesture-handler'
+      ),
+      'react-native-reanimated': path.resolve(
+        __dirname,
+        'node_modules/react-native-reanimated'
+      ),
     },
     blockList: exclusionList([
       new RegExp(`${moduleRoot}/node_modules/react/.*`),
       new RegExp(`${moduleRoot}/node_modules/react-native/.*`),
+      new RegExp(`${moduleRoot}/node_modules/react-native-gesture-handler/.*`),
+      new RegExp(`${moduleRoot}/node_modules/react-native-reanimated/.*`),
     ]),
   },
   transformer: {

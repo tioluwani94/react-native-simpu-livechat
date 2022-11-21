@@ -3,11 +3,12 @@ import { Button, StyleSheet, View } from 'react-native'
 import { useSimpuLiveChat } from 'react-native-simpu-livechat'
 
 const TriggerButton = () => {
-  const { show } = useSimpuLiveChat()
+  const { show, hide } = useSimpuLiveChat()
 
   return (
     <View style={styles.container}>
-      <Button onPress={() => show()} title='Press Me' />
+      <Button onPress={() => show()} title='Show Modal' />
+      <Button onPress={() => hide()} title='Hide Modal' />
     </View>
   )
 }

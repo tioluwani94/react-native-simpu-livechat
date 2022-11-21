@@ -7,6 +7,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 import createContext from '../utils/create-context'
+import CustomBackdrop from './CustomBackdrop'
 
 type ContextValue = { show: () => void; hide: () => void }
 
@@ -17,7 +18,7 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null)
 
-  const snapPoints = useMemo(() => ['0%', '90%'], [])
+  const snapPoints = useMemo(() => ['25%', '100%'], [])
 
   const show = useCallback(() => {
     bottomSheetModalRef.current?.present()
@@ -38,6 +39,7 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
 
   return (
     <Provider value={value}>
+      {children}
       <GestureHandlerRootView style={{ flex: 1 }}>
         <BottomSheetModalProvider>
           <BottomSheetModal
@@ -45,6 +47,11 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
             snapPoints={snapPoints}
             ref={bottomSheetModalRef}
             onChange={handleSheetChanges}
+            backgroundStyle={{
+              flex: 1,
+            }}
+            style={{ flex: 1 }}
+            backdropComponent={CustomBackdrop}
           >
             <View style={styles.modalContentContainer}>
               <Text>Awesome 🎉</Text>
@@ -52,7 +59,6 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
           </BottomSheetModal>
         </BottomSheetModalProvider>
       </GestureHandlerRootView>
-      {children}
     </Provider>
   )
 }
