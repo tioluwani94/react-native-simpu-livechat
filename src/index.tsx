@@ -1,7 +1,9 @@
+import 'react-native-gesture-handler'
+
 import { NativeModules } from 'react-native'
 
-import { Counter } from './components/Counter'
+import { SimpuLiveChatProvider, useSimpuLiveChat } from './components/Provider'
 
-export { Counter }
+export { SimpuLiveChatProvider, useSimpuLiveChat }
 
 export default NativeModules.RNSimpuLiveChatModule
