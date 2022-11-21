@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import RNSimpuLiveChatModule, {
   SimpuLiveChatProvider,
+  SimpuLiveChatWidget,
 } from 'react-native-simpu-livechat'
 import TriggerButton from './components/TriggerButton'
 
@@ -14,9 +15,7 @@ const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SimpuLiveChatProvider>
-        <View style={{ flex: 1 }}>
-          <TriggerButton />
-        </View>
+        <TriggerButton />
       </SimpuLiveChatProvider>
     </GestureHandlerRootView>
   )

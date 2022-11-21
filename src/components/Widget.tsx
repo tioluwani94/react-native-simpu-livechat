@@ -3,22 +3,15 @@ import {
   BottomSheetModalProvider,
 } from '@gorhom/bottom-sheet'
 import React, { ReactNode, useCallback, useMemo, useRef } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
-import createContext from '../utils/create-context'
 import CustomBackdrop from './CustomBackdrop'
 
-type ContextValue = { show: () => void; hide: () => void }
-
-const [Provider, useSimpuLiveChat] = createContext<ContextValue>()
-
-const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
-  const { children } = props
-
+const SimpuLiveChatWidget = () => {
   const bottomSheetModalRef = useRef<BottomSheetModal>(null)
 
-  const snapPoints = useMemo(() => ['25%', '98%'], [])
+  const snapPoints = useMemo(() => ['25%', '50%', '100%'], [])
 
   const show = useCallback(() => {
     bottomSheetModalRef.current?.present()
@@ -32,22 +25,16 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
     console.log('handleSheetChanges', index)
   }, [])
 
-  const value = useMemo(
-    () => ({ show, hide, bottomSheetModalRef }),
-    [show, hide, bottomSheetModalRef]
-  )
-
   return (
-    <Provider value={value}>
+    <>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        {children}
+        <Button onPress={() => show()} title='Show Modal' />
         <BottomSheetModalProvider>
           <BottomSheetModal
             index={1}
             snapPoints={snapPoints}
             ref={bottomSheetModalRef}
             onChange={handleSheetChanges}
-            handleComponent={null}
             backgroundStyle={{
               flex: 1,
             }}
@@ -60,7 +47,7 @@ const SimpuLiveChatProvider = (props: { children: ReactNode }) => {
           </BottomSheetModal>
         </BottomSheetModalProvider>
       </GestureHandlerRootView>
-    </Provider>
+    </>
   )
 }
 
@@ -71,4 +58,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export { SimpuLiveChatProvider, useSimpuLiveChat }
+export default SimpuLiveChatWidget

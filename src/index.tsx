@@ -4,6 +4,8 @@ import { NativeModules } from 'react-native'
 
 import { SimpuLiveChatProvider, useSimpuLiveChat } from './components/Provider'
 
-export { SimpuLiveChatProvider, useSimpuLiveChat }
+import SimpuLiveChatWidget from './components/Widget'
+
+export { SimpuLiveChatProvider, useSimpuLiveChat, SimpuLiveChatWidget }
 
 export default NativeModules.RNSimpuLiveChatModule
