@@ -1,21 +1,23 @@
-import React, { useEffect } from 'react'
-import { View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import RNSimpuLiveChatModule, {
-  SimpuLiveChatProvider,
-  SimpuLiveChatWidget,
-} from 'react-native-simpu-livechat'
-import TriggerButton from './components/TriggerButton'
+import { SimpuLiveChatProvider } from 'react-native-simpu-livechat'
+import AboutScreen from './screens/About'
+import HomeScreen from './screens/Home'
 
 const App = () => {
-  useEffect(() => {
-    console.log(RNSimpuLiveChatModule)
-  })
+  const Stack = createNativeStackNavigator()
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SimpuLiveChatProvider>
-        <TriggerButton />
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name='Home' component={HomeScreen} />
+            <Stack.Screen name='About' component={AboutScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </SimpuLiveChatProvider>
     </GestureHandlerRootView>
   )

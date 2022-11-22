@@ -36,6 +36,8 @@
     "@babel/core": "^7.16.12",
     "@babel/runtime": "^7.16.7",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
     "@types/jest": "^27.4.0",
     "@types/react-native": "^0.66.15",
     "@types/react-test-renderer": "^17.0.1",
@@ -48,6 +50,8 @@
     "react-native": "^0.67.1",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-reanimated": "^2.13.0",
+    "react-native-safe-area-context": "^4.4.1",
+    "react-native-screens": "^3.18.2",
     "react-test-renderer": "^17.0.2",
     "typescript": "^4.5.5"
   },
@@ -55,7 +59,11 @@
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": "*",
-    "react-native-reanimated": "*"
+    "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*"
   },
   "jest": {
     "preset": "react-native",
